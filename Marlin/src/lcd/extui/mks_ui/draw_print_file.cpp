@@ -61,7 +61,7 @@ uint8_t sel_id = 0;
 uint16_t lv_longFilename[FILENAME_LENGTH * MAX_VFAT_ENTRIES + 1]; 
 /*
 Unicode      		|        UTF-8
-Hexadecimal      	|        Binary
+Hexadecimal    	|        Binary
 --------------------------+---------------------------------------------
 0000 0000-0000 007F | 0xxxxxxx
 0000 0080-0000 07FF | 110xxxxx 10xxxxxx
@@ -103,8 +103,6 @@ void unicode_2_utf8(char *des, uint16_t *source, uint8_t Len) {
 		}
 	}
 }
-
-
 
 
 #if ENABLED(SDSUPPORT)

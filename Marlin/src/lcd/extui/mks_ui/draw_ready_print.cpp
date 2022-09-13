@@ -45,7 +45,7 @@
 
 #define ICON_POS_Y            260
 #define TARGET_LABEL_MOD_Y    -36
-#define LABEL_MOD_Y           30
+#define LABEL_MOD_Y            30
 
 extern lv_group_t*  g;
 #ifndef USE_NEW_LVGL_CONF
@@ -141,7 +141,7 @@ void lv_draw_ready_print() {
 
   disp_state_stack._disp_index = 0;
   ZERO(disp_state_stack._disp_state);
-  
+    
 #ifdef USE_NEW_LVGL_CONF
   mks_ui.src_main = lv_set_scr_id_title(mks_ui.src_main, PRINT_READY_UI, "");
 #else 
@@ -155,7 +155,7 @@ void lv_draw_ready_print() {
 #else
     buttonTool = lv_imgbtn_create(scr, "F:/bmp_tool.bin", event_handler, ID_TOOL);
 #endif
-
+    
     lv_obj_set_pos(buttonTool, 360, 180);
 
     lv_obj_t *label_tool = lv_label_create_empty(buttonTool);
@@ -219,33 +219,39 @@ void lv_draw_ready_print() {
     lv_obj_set_pos(det_info, 20, 145);
     lv_label_set_text(det_info, " ");
   }
-  else {
+  else {  
+   // disp_string(10, 10, "MKS Robin Nano V3.0", 0xFFA5, 0x0000);
 #ifdef USE_NEW_LVGL_CONF
-    lv_big_button_create(mks_ui.src_main, "F:/bmp_tool.bin", main_menu.tool, 20, 90, event_handler, ID_TOOL);
-    lv_big_button_create(mks_ui.src_main, "F:/bmp_set.bin", main_menu.set, 180, 90, event_handler, ID_SET);
-    lv_big_button_create(mks_ui.src_main, "F:/bmp_printing.bin", main_menu.print, 340, 90, event_handler, ID_PRINT);
+    lv_big_button_create(mks_ui.src_main, "F:/bmp_tool.bin", main_menu.tool, 20, 100, event_handler, ID_TOOL);
+    lv_big_button_create(mks_ui.src_main, "F:/bmp_set.bin", main_menu.set, 180, 100, event_handler, ID_SET);
+    lv_big_button_create(mks_ui.src_main, "F:/bmp_printing.bin", main_menu.print, 340, 100, event_handler, ID_PRINT);
 #else
-    lv_big_button_create(scr, "F:/bmp_tool.bin", main_menu.tool, 20, 90, event_handler, ID_TOOL);
-    lv_big_button_create(scr, "F:/bmp_set.bin", main_menu.set, 180, 90, event_handler, ID_SET);
-    lv_big_button_create(scr, "F:/bmp_printing.bin", main_menu.print, 340, 90, event_handler, ID_PRINT);
+    lv_big_button_create(scr, "F:/bmp_tool.bin", main_menu.tool, 20, 110, event_handler, ID_TOOL);
+    lv_big_button_create(scr, "F:/bmp_set.bin", main_menu.set, 180, 110, event_handler, ID_SET);
+    lv_big_button_create(scr, "F:/bmp_printing.bin", main_menu.print, 340, 110, event_handler, ID_PRINT);
 #endif
     // Monitoring
-    #if HAS_HOTEND
-#ifdef USE_NEW_LVGL_CONF
-      buttonExt1 = lv_big_button_create(mks_ui.src_main, "F:/bmp_ext1_state.bin", " ", 20, ICON_POS_Y, event_handler, ID_INFO_EXT);
-#else
-      buttonExt1 = lv_big_button_create(scr, "F:/bmp_ext1_state.bin", " ", 20, ICON_POS_Y, event_handler, ID_INFO_EXT);
-#endif
-    #endif
-    #if HAS_MULTI_HOTEND
-      buttonExt2 = lv_big_button_create(scr, "F:/bmp_ext2_state.bin", " ", 180, ICON_POS_Y, event_handler, ID_INFO_EXT);
-    #endif
     #if HAS_HEATED_BED
 #ifdef USE_NEW_LVGL_CONF
       buttonBedstate = lv_big_button_create(mks_ui.src_main, "F:/bmp_bed_state.bin", " ", TERN(HAS_MULTI_HOTEND, 271, 210), ICON_POS_Y, event_handler, ID_INFO_BED);
 #else
-      buttonBedstate = lv_big_button_create(scr, "F:/bmp_bed_state.bin", " ", TERN(HAS_MULTI_HOTEND, 340, 210), ICON_POS_Y, event_handler, ID_INFO_BED);
+      buttonBedstate = lv_big_button_create(scr, "F:/bmp_bed_state.bin", " ", 10, ICON_POS_Y, event_handler, ID_INFO_BED);
+      //buttonBedstate = lv_big_button_create(scr, "F:/bmp_bed_state.bin", " ", TERN(HAS_MULTI_HOTEND, 340, 210), ICON_POS_Y, event_handler, ID_INFO_BED);
 #endif
+    #if HAS_HOTEND
+#ifdef USE_NEW_LVGL_CONF
+      buttonExt1 = lv_big_button_create(mks_ui.src_main, "F:/bmp_ext1_state.bin", " ", 180, ICON_POS_Y, event_handler, ID_INFO_EXT);
+      //buttonExt1 = lv_big_button_create(mks_ui.src_main, "F:/bmp_ext1_state.bin", " ", 20, ICON_POS_Y, event_handler, ID_INFO_EXT);
+#else
+      buttonExt1 = lv_big_button_create(scr, "F:/bmp_ext1_state.bin", " ", 170, ICON_POS_Y, event_handler, ID_INFO_EXT);
+      //buttonExt1 = lv_big_button_create(scr, "F:/bmp_ext1_state.bin", " ", 20, ICON_POS_Y, event_handler, ID_INFO_EXT);
+#endif
+    #endif
+    #if HAS_MULTI_HOTEND
+      buttonExt2 = lv_big_button_create(scr, "F:/bmp_ext2_state.bin", " ", TERN(HAS_MULTI_HOTEND, 340, 210), ICON_POS_Y, event_handler, ID_INFO_EXT);
+      //buttonExt2 = lv_big_button_create(scr, "F:/bmp_ext2_state.bin", " ", 180, ICON_POS_Y, event_handler, ID_INFO_EXT);
+    #endif
+  
     #endif
 
 #ifdef USE_NEW_LVGL_CONF

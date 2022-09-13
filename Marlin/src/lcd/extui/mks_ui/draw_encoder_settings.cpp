@@ -44,8 +44,6 @@ enum {
   ID_ENCODER_NONE
 };
 
-
-
 static void event_handler(lv_obj_t *obj, lv_event_t event) {
   if (event != LV_EVENT_RELEASED) return;
   switch (obj->mks_obj_id) {

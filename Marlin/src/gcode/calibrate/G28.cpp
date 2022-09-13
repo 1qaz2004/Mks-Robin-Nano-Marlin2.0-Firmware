@@ -551,6 +551,6 @@ void GcodeSuite::G28() {
   #endif
   
   #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
-  set_bed_leveling_enabled(true);
+     TERN_(HAS_LEVELING, set_bed_leveling_enabled (true));
   #endif
 }

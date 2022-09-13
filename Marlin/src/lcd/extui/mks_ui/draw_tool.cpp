@@ -65,7 +65,7 @@ static void event_handler(lv_obj_t *obj, lv_event_t event) {
     case ID_T_LEVELING:
       #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
         queue.inject_P(PSTR("G91"));
-        queue.inject_P(PSTR("G1 Z5 F1000"));
+        queue.inject_P(PSTR("G1 Z5 F400"));
         queue.inject_P(PSTR("G90"));
         // sprintf(public_buf_l, PSTR("G91\nG1 Z5 F1000\nG90"));
         queue.inject(public_buf_l);
