@@ -128,7 +128,6 @@ void lv_draw_bltouch_settings(void) {
   lv_imgbtn_set_src(buttonInitstate, LV_BTN_STATE_REL, "F:/bmp_init_state.bin");
   lv_obj_set_pos(buttonInitstate, 145, 50);
 
-
   lv_obj_t *buttonExt1 = lv_img_create(scr, nullptr);
   lv_img_set_src(buttonExt1, "F:/bmp_ext1_state.bin");
   lv_obj_set_pos(buttonExt1, 216, 50);
