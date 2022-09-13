@@ -805,22 +805,22 @@ extern eeprom_def eeprom_menu;
 #define LANGUAGE_EN         "English"
 #define LANGUAGE_JP         "日本語"
 #define LANGUAGE_GE         "Deutsch"
-#define LANGUAGE_FR         "français"
+#define LANGUAGE_FR         "Francais"
 #define LANGUAGE_IT         "Italiano"
-#define LANGUAGE_PR         "português"
+#define LANGUAGE_PR         "Português"
 #define LANGUAGE_KR         "Korean"
 #define LANGUAGE_BR         "Brazil"
-#define LANGUAGE_RU         "русский"
-#define LANGUAGE_SP         "español"
+#define LANGUAGE_RU         "Pусский"
+#define LANGUAGE_SP         "Espanol"
 
 #define HOME_X_TEXT         "X"
 #define HOME_Y_TEXT         "Y"
 #define HOME_Z_TEXT         "Z"
 #define HOME_ALL_TEXT       "All"
 
-#define ABOUT_TYPE_TEXT     "MKS Robin Pro"
+#define ABOUT_TYPE_TEXT     "MKS Robin Nano"
 
-#define ABOUT_VERSION_TEXT  "1.0.0"
+#define ABOUT_VERSION_TEXT  "1.0.1"
 
 #define FAN_OPEN_TEXT       "100%"
 #define FAN_HALF_TEXT       "50%"
