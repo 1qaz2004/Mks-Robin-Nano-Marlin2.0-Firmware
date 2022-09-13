@@ -21,8 +21,8 @@
  */
 #pragma once
 
-//****************英文***************************//
-#define MACHINE_CONFIG_EN              "Config"
+//****************English****************//
+#define MACHINE_CONFIG_EN       "Config"
 
 #define NEXT_EN                 "Next"
 #define PREVIOUS_EN             "Previous"
@@ -123,8 +123,8 @@
 #define ENABLE_EN                       "YES"
 #define DISABLE_EN                      "NO"
 #define LOCKED_EN                       "N/A"
-#define Z_MIN_EN                        "ZMin"
-#define Z_MAX_EN                        "ZMax"
+#define Z_MIN_EN                        "Z Min"
+#define Z_MAX_EN                        "Z Max"
 
 #define DELTA_LEVEL_CONF_TITLE_EN       "Delta Machine settings"
 #define DELTA_LEVEL_CONF_EN             "Delta Machine Leveling"
@@ -234,7 +234,7 @@
 #define HAVE_UPS_EN                     "Has UPS power supply"
 #define Z2_AND_Z2ENDSTOP_CONF_EN        "Z2 Settings"
 #define ENABLE_PINS_CONF_EN             "Enable pins level settings"
-#define WIFI_SETTINGS_EN                "Wi-Fi parameter settings"
+#define WIFI_SETTINGS_EN                " Wi-Fi parameter settings"
 #define HOMING_SENSITIVITY_CONF_EN      "Homing sensitivity settings"
 #define ENCODER_SETTINGS_EN             "Rotary encoder settings"
 
@@ -295,9 +295,9 @@
 #define EXTRUDER_1_TEXT_EN      "Extrusion1"
 #define EXTRUDER_2_TEXT_EN      "Extrusion2"
 #define HEATBED_TEXT_EN         "HeatBed"
-#define TEXT_1C_EN              "1℃"
-#define TEXT_5C_EN              "5℃"
-#define TEXT_10C_EN             "10℃"
+#define TEXT_1C_EN              "1 ℃"
+#define TEXT_5C_EN              "5 ℃"
+#define TEXT_10C_EN             "10 ℃"
 #define CLOSE_TEXT_EN           "Close"
 
 #define BACK_TEXT_EN            "Back"
@@ -311,15 +311,15 @@
 #define TOOL_FILAMENT_EN        "Filament"
 #define TOOL_MORE_EN            "More"
 
-#define AXIS_X_ADD_TEXT_EN      "X+"
-#define AXIS_X_DEC_TEXT_EN      "X-"
-#define AXIS_Y_ADD_TEXT_EN      "Y+"
-#define AXIS_Y_DEC_TEXT_EN      "Y-"
-#define AXIS_Z_ADD_TEXT_EN      "Z+"
-#define AXIS_Z_DEC_TEXT_EN      "Z-"
-#define TEXT_01MM_EN            "0.1mm"
-#define TEXT_1MM_EN             "1mm"
-#define TEXT_10MM_EN            "10mm"
+#define AXIS_X_ADD_TEXT_EN      "X +"
+#define AXIS_X_DEC_TEXT_EN      "X -"
+#define AXIS_Y_ADD_TEXT_EN      "Y +"
+#define AXIS_Y_DEC_TEXT_EN      "Y -"
+#define AXIS_Z_ADD_TEXT_EN      "Z +"
+#define AXIS_Z_DEC_TEXT_EN      "Z -"
+#define TEXT_01MM_EN            "0.1 mm"
+#define TEXT_1MM_EN             "1 mm"
+#define TEXT_10MM_EN            "10 mm"
 
 #define HOME_X_TEXT_EN          "X"
 #define HOME_Y_TEXT_EN          "Y"
@@ -332,9 +332,9 @@
 
 #define EXTRUDER_IN_TEXT_EN           "In"
 #define EXTRUDER_OUT_TEXT_EN          "Out"
-#define EXTRUDE_1MM_TEXT_EN           "1mm"
-#define EXTRUDE_5MM_TEXT_EN           "5mm"
-#define EXTRUDE_10MM_TEXT_EN          "10mm"
+#define EXTRUDE_1MM_TEXT_EN           "1 mm"
+#define EXTRUDE_5MM_TEXT_EN           "5 mm"
+#define EXTRUDE_10MM_TEXT_EN          "10 mm"
 #define EXTRUDE_LOW_SPEED_TEXT_EN     "Low"
 #define EXTRUDE_MEDIUM_SPEED_TEXT_EN  "Normal"
 #define EXTRUDE_HIGH_SPEED_TEXT_EN    "High"
@@ -346,7 +346,7 @@
 #define LEVELING_POINT5_TEXT_EN       "Point5"
 
 #define FILESYS_TEXT_EN               "FileSys"
-#define WIFI_TEXT_EN                  "WiFi"
+#define WIFI_TEXT_EN                  "Wi-Fi"
 #define FAN_TEXT_EN                   "Fan"
 #define ABOUT_TEXT_EN                 "About"
 #define BREAK_POINT_TEXT_EN           "Continue"
@@ -360,7 +360,7 @@
 
 #define U_DISK_TEXT_EN                "USB"
 #define SD_CARD_TEXT_EN               "SD"
-#define WIFI_NAME_TEXT_EN             "WiFi: "
+#define WIFI_NAME_TEXT_EN             "Wi-Fi: "
 #define WIFI_KEY_TEXT_EN              "Key: "
 #define WIFI_IP_TEXT_EN               "IP: "
 #define WIFI_AP_TEXT_EN               "State: AP"
@@ -392,7 +392,7 @@
 #define FILAMENT_EXT1_TEXT_EN         "Extrusion2"
 #define FILAMENT_HEAT_TEXT_EN         "Preheat"
 #define FILAMENT_STOP_TEXT_EN         "Stop"
-#define FILAMENT_TIPS2_TEXT_EN        "T:"
+#define FILAMENT_TIPS2_TEXT_EN        "T: "
 #define FILAMENT_TIPS3_TEXT_EN        "Loading..."
 #define FILAMENT_TIPS4_TEXT_EN        "Unloading..."
 #define FILAMENT_TIPS5_TEXT_EN        "Temp is too low to go,please heat"
@@ -424,7 +424,7 @@
 
 #define ABOUT_TYPE_TEXT_EN                  "Type: "
 #define ABOUT_VERSION_TEXT_EN               "Firmware: "
-#define ABOUT_WIFI_TEXT_EN                  "WiFi: "
+#define ABOUT_WIFI_TEXT_EN                  "Wi-Fi: "
 
 #define PRINTING_OPERATION_EN               "Option"
 #define PRINTING_PAUSE_EN                   "Pause"
@@ -440,9 +440,9 @@
 #define MOVE_SPEED_EN                       "Move"
 #define EXTRUDER_SPEED_STATE_EN             "Extrude Speed"
 #define MOVE_SPEED_STATE_EN                 "Move Speed"
-#define STEP_1PERCENT_EN                    "1%"
-#define STEP_5PERCENT_EN                    "5%"
-#define STEP_10PERCENT_EN                   "10%"
+#define STEP_1PERCENT_EN                    "1 %"
+#define STEP_5PERCENT_EN                    "5 %"
+#define STEP_10PERCENT_EN                   "10 %"
 
 #define TITLE_READYPRINT_EN                 "ReadyPrint"
 #define TITLE_PREHEAT_EN                    "Preheat"
@@ -490,7 +490,7 @@
 #define DIALOG_PRINT_FINISH_EN              "Done print!"
 #define DIALOG_PRINT_TIME_EN                "Print time: "
 #define DIALOG_REPRINT_EN                   "Print again"
-#define DIALOG_WIFI_ENABLE_TIPS_EN          "The wifi module is being configured\nplease wait a moment....."
+#define DIALOG_WIFI_ENABLE_TIPS_EN          "The Wi-Fi module is being configured\nplease wait a moment....."
 #define DIALOG_AUTO_LEVELING_TIPS_EN        "Auto-leveling, please wait..."
 
 #define HOTBED_ENABLE_EN        "Enable heatbed"
@@ -525,7 +525,7 @@
 #define ABOUT_TITLE_EN                    "About"
 #define ABOUT_BUILT_MACHINES_EN           "Built Machines"
 #define ABOUT_SPARK_EN                    "Spark"
-#define ABOUT_VERSION_EN                  "Version 1.1.0"
+#define ABOUT_VERSION_EN                  "Version 1.1.1"
 #define ABOUT_SERIAL_NUMBER_EN            "Serial Number:"
 #define ABOUT_S_NUMBER_EN                 "DCPLX02KFC6P"
 
@@ -534,7 +534,7 @@
 #define SETUP_WIFI_EN                     "Wi-Fi"
 #define SETUP_MANUAL_IP_EN                "Manual IP"
 #define SETUP_WIFI_NOT_CONNECTED_EN       "Not Connected"
-#define SETUP_WIFI_NETWORK_EN             "WiFi_Network"
+#define SETUP_WIFI_NETWORK_EN             "Wi-Fi_Network"
 
 // build
 #define BUILD_TITLE_EN                    "Build"
