@@ -32,7 +32,7 @@
 #define HAS_OTG_USB_HOST_SUPPORT
 
 // Avoid conflict with TIMER_TONE
-#define STEP_TIMER                            10
+#define STEP_TIMER                         10
 
 // Use one of these or SDCard-based Emulation will be used
 //#define SRAM_EEPROM_EMULATION                   // Use BackSRAM-based EEPROM emulation
@@ -62,7 +62,7 @@
 #define Z_DIAG_PIN                          PC8
 
 #ifndef E0_DIAG_PIN
-  #define E0_DIAG_PIN                         PC4
+  #define E0_DIAG_PIN                       PC4
 #endif
 
 #ifndef E1_DIAG_PIN
@@ -84,7 +84,7 @@
 #define X_DIR_PIN                           PE2
 
 #ifndef Y_ENABLE_PIN
-  #define Y_ENABLE_PIN                        PE1
+  #define Y_ENABLE_PIN                      PE1
 #endif
 #define Y_STEP_PIN                          PE0
 #define Y_DIR_PIN                           PB9
@@ -92,6 +92,10 @@
 #define Z_ENABLE_PIN                        PB8
 #define Z_STEP_PIN                          PB5
 #define Z_DIR_PIN                           PB4
+
+#define Z2_ENABLE_PIN                       PB8
+#define Z2_STEP_PIN                         PB5
+#define Z2_DIR_PIN                          PB4
 
 #define E0_ENABLE_PIN                       PB3
 #define E0_STEP_PIN                         PD6
@@ -153,7 +157,7 @@
 //
 #if HAS_TFT_LVGL_UI
   #define MT_DET_1_PIN                      PA4   // MT_DET
-  #define MT_DET_2_PIN                      PE6
+//#define MT_DET_2_PIN                      PE6
   #define MT_DET_PIN_STATE                  LOW
 #endif
 
@@ -161,24 +165,26 @@
   #define FIL_RUNOUT_PIN            MT_DET_1_PIN
 #endif
 #ifndef FIL_RUNOUT2_PIN
-  #define FIL_RUNOUT2_PIN           MT_DET_2_PIN
+//  #define FIL_RUNOUT2_PIN           MT_DET_2_PIN
 #endif
 
-#ifndef POWER_LOSS_PIN
-  // #define POWER_LOSS_PIN                    PA13  // PW_DET
-#endif
+//#ifndef POWER_LOSS_PIN
+    #define POWER_LOSS_PIN                  PE6  // PW_DET UPS
+//#endif
 
 //#define SUICIDE_PIN                       PB2
 //#define LED_PIN                           PB2
 //#define KILL_PIN                          PA2
 //#define KILL_PIN_STATE                    LOW
-
+#define PS_ON_PIN                           PB2   // PW_OFF
 //
 // Power Supply Control
 //
 #if ENABLED(MKS_PWC)
   #if ENABLED(TFT_LVGL_UI)
-    #undef PSU_CONTROL
+   // #if ENABLED(PSU_CONTROL)
+   //   #error "PSU_CONTROL is incompatible with MKS_PWC plus TFT_LVGL_UI."
+   //#endif
     #undef MKS_PWC
     #define SUICIDE_PIN                     PB2
     #define SUICIDE_PIN_STATE               LOW
@@ -207,8 +213,9 @@
 #endif
 
 // MKS TEST
+ #define MKS_TEST
 #if ENABLED(MKS_TEST)
-  #define MKS_TEST_POWER_LOSS_PIN           PA13  // PW_DET
+  #define MKS_TEST_POWER_LOSS_PIN           PE6   // PW_DET
   #define MKS_TEST_PS_ON_PIN                PB2   // PW_OFF
 #endif
 
@@ -228,8 +235,8 @@
 
 #define SPI_FLASH
 #if ENABLED(SPI_FLASH)
-  #define HAS_SPI_FLASH                        1
-  #define SPI_DEVICE                           2
+  #define HAS_SPI_FLASH                     1
+  #define SPI_DEVICE                        2
   #define SPI_FLASH_SIZE               0x1000000
   #define SPI_FLASH_CS_PIN                  PB12
   #define SPI_FLASH_MOSI_PIN                PC3
@@ -290,7 +297,9 @@
   #define TFT_A0_PIN                  TFT_DC_PIN
 
   #define TFT_RESET_PIN              EXP1_07_PIN
-  #define TFT_BACKLIGHT_PIN          EXP1_08_PIN
+
+  #define LCD_BACKLIGHT_PIN          EXP1_08_PIN
+  #define TFT_BACKLIGHT_PIN    LCD_BACKLIGHT_PIN
 
   #define TOUCH_BUTTONS_HW_SPI
   #define TOUCH_BUTTONS_HW_SPI_DEVICE          1
@@ -382,9 +391,16 @@
 
 #endif // HAS_WIRED_LCD
 
+#if HAS_TFT_LVGL_UI
+  // Enable SPI DMA, this requires button pins, thus no buttons. Default is DISABLED.
+  //#define USE_SPI_DMA_TC
+#endif
+
 #if ANY(TFT_COLOR_UI, TFT_LVGL_UI, TFT_CLASSIC_UI, HAS_WIRED_LCD)
   #define BEEPER_PIN                 EXP1_10_PIN
-  #define BTN_EN1                    EXP2_08_PIN
-  #define BTN_EN2                    EXP2_06_PIN
-  #define BTN_ENC                    EXP1_09_PIN
+  #if DISABLED(USE_SPI_DMA_TC)
+    #define BTN_EN1                  EXP2_08_PIN
+    #define BTN_EN2                  EXP2_06_PIN
+    #define BTN_ENC                  EXP1_09_PIN
+  #endif
 #endif
