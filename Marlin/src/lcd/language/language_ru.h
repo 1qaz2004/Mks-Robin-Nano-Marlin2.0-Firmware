@@ -649,7 +649,7 @@ namespace Language_ru {
   LSTR MSG_DELTA_CALIBRATE_Z                = _UxGT("Калибровать Z");
   LSTR MSG_DELTA_CALIBRATE_CENTER           = _UxGT("Калибровать центр");
   LSTR MSG_DELTA_SETTINGS                   = _UxGT("Настройки Delta");
-  LSTR MSG_DELTA_AUTO_CALIBRATE             = _UxGT("Авто калибровка");
+  LSTR MSG_DELTA_AUTO_CALIBRATE             = _UxGT("Автокалибровка");
   LSTR MSG_DELTA_HEIGHT_CALIBRATE           = _UxGT("Высота Delta");
   #if LCD_WIDTH > 21
     LSTR MSG_DELTA_Z_OFFSET_CALIBRATE       = _UxGT("Зондировать Z-смещения");
@@ -705,7 +705,7 @@ namespace Language_ru {
   #else
     LSTR MSG_INFO_PRINT_COUNT               = _UxGT("Напечатано");
     LSTR MSG_INFO_PRINT_TIME                = _UxGT("Общее время");
-    LSTR MSG_INFO_PRINT_LONGEST             = _UxGT("Наидольшее");
+    LSTR MSG_INFO_PRINT_LONGEST             = _UxGT("Наибольшее");
     LSTR MSG_INFO_PRINT_FILAMENT            = _UxGT("Выдавлено");
   #endif
   LSTR MSG_INFO_COMPLETED_PRINTS            = _UxGT("Завершено");
@@ -734,7 +734,7 @@ namespace Language_ru {
   #if LCD_WIDTH > 21
     LSTR MSG_RUNOUT_SENSOR                  = _UxGT("Датчик оконч. филамента");
   #else
-    LSTR MSG_RUNOUT_SENSOR                  = _UxGT("Датчик оконч.филам.");
+    LSTR MSG_RUNOUT_SENSOR                  = _UxGT("Датчик нал. филам.");
   #endif
   LSTR MSG_RUNOUT_DISTANCE_MM               = _UxGT("До конца, мм");
   LSTR MSG_KILL_HOMING_FAILED               = _UxGT("Ошибка парковки");
