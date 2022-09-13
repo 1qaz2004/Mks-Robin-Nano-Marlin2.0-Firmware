@@ -45,7 +45,8 @@ enum {
   ID_H_Z,
   ID_H_RETURN,
   ID_H_OFF_ALL,
-  ID_H_OFF_XY
+  ID_H_OFF_XY,
+  ID_H_POWER_OFF 
 };
 
 static void event_handler(lv_obj_t *obj, lv_event_t event) {
@@ -89,6 +90,11 @@ static void event_handler(lv_obj_t *obj, lv_event_t event) {
           queue.inject_P(PSTR("M84XY"));
         }
         break;
+      case ID_H_POWER_OFF:
+        if(is_rb_full) {
+          queue.inject_P(PSTR("M81"));
+        }
+        break;  
       case ID_H_RETURN:
         lv_clear_home();
         lv_draw_tool();
@@ -116,6 +122,7 @@ void lv_draw_home() {
   lv_big_button_create(scr, "F:/bmp_zeroZ.bin", home_menu.home_z, BTN_X_PIXEL * 3 + INTERVAL_V * 4, titleHeight, event_handler, ID_H_Z);
   lv_big_button_create(scr, "F:/bmp_function1.bin", set_menu.motoroff, INTERVAL_V, BTN_Y_PIXEL + INTERVAL_H + titleHeight, event_handler, ID_H_OFF_ALL);
   lv_big_button_create(scr, "F:/bmp_function1.bin", set_menu.motoroffXY, BTN_X_PIXEL + INTERVAL_V * 2, BTN_Y_PIXEL + INTERVAL_H + titleHeight, event_handler, ID_H_OFF_XY);
+  lv_big_button_create(scr, "F:/bmp_manual_off.bin", set_menu.shutdown, BTN_X_PIXEL * 2 + INTERVAL_V * 3, BTN_Y_PIXEL + INTERVAL_H + titleHeight, event_handler, ID_H_POWER_OFF);
   lv_big_button_create(scr, "F:/bmp_return.bin", common_menu.text_back, BTN_X_PIXEL * 3 + INTERVAL_V * 4, BTN_Y_PIXEL + INTERVAL_H + titleHeight, event_handler, ID_H_RETURN);
 #endif
 
